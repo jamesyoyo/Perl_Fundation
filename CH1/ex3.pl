@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 @lines = `perldoc -u -f atan2`;
 foreach(@lines) {
-	s/\w([^>+]>)/\U$1/g;
+	s/\w<([^>]+)>/\U$1/g; #Remove "<" and ">" and chage word in "<>" to upper case .
 	print;
 }
